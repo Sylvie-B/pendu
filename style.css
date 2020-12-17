@@ -13,6 +13,15 @@ body {
     width: 100%;
 }
 
+#container {
+    width: 80%;
+    height: 50vh;
+    margin: auto;
+    padding-top: 2vh;
+    background-image: url("paysage.png");
+    background-size: cover;
+}
+
 #hollow {
     width: 50%;
     margin: auto;

@@ -13,16 +13,18 @@ let w = Math.ceil(Math.random() * allWord.length-1);
 
 // letter to table & hollow display
 let hollow = document.getElementById('hollow');
+
 for (let i = 0 ; i < allWord[w].length; i++){
-    // display hollow word
+    // display hollow letters
     let eachLetter = document.createElement('div');
     eachLetter.innerHTML = allWord[w][i];
     eachLetter.style.border = '1px dashed gray';
+    eachLetter.style.backgroundColor = 'gray';
     eachLetter.style.width = '3vw';
     eachLetter.style.height = '3vh';
     eachLetter.style.margin = '5px';
     hollow.appendChild(eachLetter);
-    console.log(hollow);
+    console.log(allWord[w][i]);
 }
 
 // get user letter
@@ -37,28 +39,31 @@ submit.addEventListener('click', function (){
     inputLetter.focus();
     console.log(letter);
     testLetter(letter);
-
 })
 
 // function testLetter
 function testLetter (letter){
-    if(word[w].includes(letter)){
+    // is the letter in the word ?
+    if(allWord[w].includes(letter)){
         console.log("la lettre se trouve dans le mot");
-        where(letter, word[w])
+        // if true, where ?
+        let spell = document.getElementById('hollow').getElementsByTagName('div');
+        // console.log("spell = " + spell[0].innerHTML);
+        for (let s = 0; s < allWord[w].length; s++){
+            if (letter === allWord[w][s]){
+                spell[s].style.color = 'black';
+            }
+        }
     }
     else{
         console.log("la lettre ne se trouve pas dans le mot");
     }
+
+
 }
 
-// is the letter in the word ?   ! is it more than one ?
-function where (letter, result){
-    for (let l = 0 ; l < word[w].length ; l++){
-        if(result[l] === letter){
-            eachLetter.style.color = 'black';
-        }
-    }
-}
+// ! is it more than one ?
+
 // display right letter(s)
 
 // say user if not
