@@ -12,6 +12,10 @@ let word = [
 let w = Math.ceil(Math.random() * word.length-1);
 let result = word[w];
 console.log(result);
+for (let i = 0 ; i < result.length; i++){
+    console.log(result[i]);
+}
+
 
 // display hollow word
 
@@ -27,15 +31,23 @@ submit.addEventListener('click', function (){
     inputLetter.value = "";
     inputLetter.focus();
     console.log(letter);
+    testLetter(letter);
 })
 
 // function testLetter
 function testLetter (letter){
-
+    if(word[w].includes(letter)){
+        console.log("la lettre se trouve dans le mot");
+    }
+    else{
+        console.log("la lettre ne se trouve pas dans le mot");
+    }
 }
 
 // is the letter in the word ?   ! is it more than one ?
+function where (letter){
 
+}
 // display right letter(s)
 
 // say user if not
