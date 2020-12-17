@@ -4,7 +4,8 @@ let word = [
     'maison',
     'devinette',
     'voiture',
-    'ordinateur'
+    'ordinateur',
+    'formation'
 ]
 
 // random on table
@@ -16,8 +17,18 @@ console.log(result);
 
 
 // get user letter
-let letter = document.getElementById('letter');
-letter.focus();
+let inputLetter = document.getElementById('letter');
+inputLetter.focus();
+let letter;
+
+let submit = document.getElementById('submit');
+submit.addEventListener('click', function (){
+    letter = inputLetter.value;
+    inputLetter.value = "";
+    inputLetter.focus();
+    console.log(letter);
+})
+
 
 // is the letter in the word ?   ! is it more than one ?
 
