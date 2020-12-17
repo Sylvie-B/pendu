@@ -12,19 +12,25 @@ let word = [
 let w = Math.ceil(Math.random() * word.length-1);
 let result = word[w];
 console.log(result);
+
+// letter to table & hollow display
+let hollow = document.getElementById('hollow');
 for (let i = 0 ; i < result.length; i++){
     console.log(result[i]);
+    // display hollow word
+    let eachLetter = document.createElement('div');
+    eachLetter.innerHTML = result[i];
+    eachLetter.style.border = '1px dashed gray';
+    eachLetter.style.width = '2vw';
+    eachLetter.style.margin = '5px';
+    hollow.appendChild(eachLetter);
+    console.log(hollow);
 }
-
-
-// display hollow word
-
 
 // get user letter
 let inputLetter = document.getElementById('letter');
 inputLetter.focus();
-
-
+// button
 let submit = document.getElementById('submit');
 submit.addEventListener('click', function (){
     let letter = inputLetter.value.toUpperCase();
