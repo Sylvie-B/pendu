@@ -1,5 +1,5 @@
 // table of words
-let word = [
+let allWord = [
     'ELEPHANT',
     'MAISON',
     'DEVINETTE',
@@ -8,20 +8,18 @@ let word = [
     'FORMATION'
 ]
 
-// random on table
-let w = Math.ceil(Math.random() * word.length-1);
-let result = word[w];
-console.log(result);
+// random on table = 1 of allWord
+let w = Math.ceil(Math.random() * allWord.length-1);
 
 // letter to table & hollow display
 let hollow = document.getElementById('hollow');
-for (let i = 0 ; i < result.length; i++){
-    console.log(result[i]);
+for (let i = 0 ; i < allWord[w].length; i++){
     // display hollow word
     let eachLetter = document.createElement('div');
-    eachLetter.innerHTML = result[i];
+    eachLetter.innerHTML = allWord[w][i];
     eachLetter.style.border = '1px dashed gray';
-    eachLetter.style.width = '2vw';
+    eachLetter.style.width = '3vw';
+    eachLetter.style.height = '3vh';
     eachLetter.style.margin = '5px';
     hollow.appendChild(eachLetter);
     console.log(hollow);
@@ -30,7 +28,8 @@ for (let i = 0 ; i < result.length; i++){
 // get user letter
 let inputLetter = document.getElementById('letter');
 inputLetter.focus();
-// button
+
+//  submit button
 let submit = document.getElementById('submit');
 submit.addEventListener('click', function (){
     let letter = inputLetter.value.toUpperCase();
@@ -38,12 +37,14 @@ submit.addEventListener('click', function (){
     inputLetter.focus();
     console.log(letter);
     testLetter(letter);
+
 })
 
 // function testLetter
 function testLetter (letter){
     if(word[w].includes(letter)){
         console.log("la lettre se trouve dans le mot");
+        where(letter, word[w])
     }
     else{
         console.log("la lettre ne se trouve pas dans le mot");
@@ -51,8 +52,12 @@ function testLetter (letter){
 }
 
 // is the letter in the word ?   ! is it more than one ?
-function where (letter){
-
+function where (letter, result){
+    for (let l = 0 ; l < word[w].length ; l++){
+        if(result[l] === letter){
+            eachLetter.style.color = 'black';
+        }
+    }
 }
 // display right letter(s)
 
