@@ -9,6 +9,9 @@ let allWord = [
     'DISPARITION'
 ]
 
+let chance = 8;
+document.getElementById('nbr').innerHTML = chance.toString();
+
 // get infos
 let wrong = document.getElementById('wrongLetter');
 let answer = document.getElementById('answer');
@@ -49,6 +52,10 @@ submit.addEventListener('click', function (){
 // submit word
 let submitWord = document.getElementById('submitWord');
 submitWord.addEventListener('click', function (){
+    // account
+    chance --;
+    document.getElementById('nbr').innerHTML = chance.toString();
+    // test word
     let test = inputWord.value.toUpperCase();
     if(allWord[w] === test){
         console.log("you win");
@@ -56,6 +63,7 @@ submitWord.addEventListener('click', function (){
     else{
         console.log("you loose")
     }
+    inputWord.value = "";
 })
 
 // function testLetter
