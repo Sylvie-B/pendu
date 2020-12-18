@@ -5,8 +5,14 @@ let allWord = [
     'DEVINETTE',
     'VOITURE',
     'ORDINATEUR',
-    'FORMATION'
+    'FORMATION',
+    'DISPARITION'
 ]
+
+// get infos
+let wrong = document.getElementById('wrongLetter');
+let answer = document.getElementById('answer');
+let nbr = document.getElementById('nbr');
 
 // random on table = 1 of allWord
 let w = Math.ceil(Math.random() * allWord.length-1);
@@ -18,20 +24,19 @@ for (let i = 0 ; i < allWord[w].length; i++){
     // display hollow letters
     let eachLetter = document.createElement('div');
     eachLetter.innerHTML = allWord[w][i];
-    eachLetter.style.border = '1px dashed gray';
     eachLetter.style.backgroundColor = 'gray';
     eachLetter.style.width = '3vw';
-    eachLetter.style.height = '3vh';
     eachLetter.style.margin = '5px';
     hollow.appendChild(eachLetter);
     console.log(allWord[w][i]);
 }
 
-// get user letter
+// get user letter & word
 let inputLetter = document.getElementById('letter');
 inputLetter.focus();
+let inputWord = document.getElementById('word');
 
-//  submit button
+//  submit letter
 let submit = document.getElementById('submit');
 submit.addEventListener('click', function (){
     let letter = inputLetter.value.toUpperCase();
@@ -41,11 +46,23 @@ submit.addEventListener('click', function (){
     testLetter(letter);
 })
 
+// submit word
+let submitWord = document.getElementById('submitWord');
+submitWord.addEventListener('click', function (){
+    let test = inputWord.value.toUpperCase();
+    if(allWord[w] === test){
+        console.log("you win");
+    }
+    else{
+        console.log("you loose")
+    }
+})
+
 // function testLetter
 function testLetter (letter){
     // is the letter in the word ?
     if(allWord[w].includes(letter)){
-        console.log("la lettre se trouve dans le mot");
+        answer.innerHTML = "la lettre se trouve dans le mot";
         // if true, where ?
         let spell = document.getElementById('hollow').getElementsByTagName('div');
         // console.log("spell = " + spell[0].innerHTML);
@@ -55,21 +72,14 @@ function testLetter (letter){
             }
         }
     }
-    else{
-        console.log("la lettre ne se trouve pas dans le mot");
+    else{   // say user if not
+        answer.innerHTML = "la lettre ne se trouve pas dans le mot";
     }
-
-
 }
-
-// ! is it more than one ?
-
-// display right letter(s)
-
-// say user if not
 
 // win : say user find the good word & random on table
 
 // loose : display word & say game over     ! count test
 
 // bonus : display pendu
+
