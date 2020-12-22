@@ -10,47 +10,28 @@
         <div id="hollow"></div>
         <div id="game">
             <section id="user">
-                <div id="try">
-                    <div id="tryLetter">
-                        <label for="letter">Proposez une lettre :</label>
-                        <input type="text" id="letter" size="1">
-                        <button id="submit">valider</button>
-                    </div>
-                    <div id="tryWord">
-                        <label for="word">Proposez un mot :</label>
-                        <input type="text" id="word" size="2">
-                        <button id="submitWord">valider</button>
+                <div id="tryLetter">
+                    <label for="letter">Proposez une lettre :</label>
+                    <input type="text" id="letter" size="1">
+                    <button id="submit">valider</button>
+                </div>
+                <div id="tryWord">
+                    <label for="word">Proposez un mot :</label>
+                    <input type="text" id="word">
+                    <button id="submitWord">valider</button>
+                </div>
+                <div id="info">
+                    <p>ne se trouvent pas dans le mot :</p>
+                    <div id="wrongLetter"></div>
+                    <!--            // say if the letter is in or not // if the word is the good-->
+                    <div id="answer"></div>
+                    <!--            //   chance counter // say game over-->
+                    <div id="count">
+                        <p><span>Il vous reste : </span><span id="nbr"></span> chances</p>
                     </div>
                 </div>
             </section>
-
-            <section id="hanged">
-<!--                <div id="frame">-->
-<!--                    <div id="top"></div>-->
-<!--                    <div id="ref01">-->
-<!--                        <div id="side"></div>-->
-<!--                        <div id="ref02">-->
-<!--                            <div id="rope"></div>-->
-<!--                            <div id="head"></div>-->
-
-<!--                            <div id="topBody">-->
-<!--                                <div id="leftHand"></div>-->
-<!--                                <div id="rightHand"></div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div id="bottom"></div>-->
-<!--                </div>-->
-            </section>
-
-            <section id="info">
-                <div id="wrongLetter"></div>
-                <!--            // say if the letter is in or not // if the word is the good-->
-                <div id="answer"></div>
-                <!--            //   chance counter // say game over-->
-                <div id="count">
-                    <p><span>Il vous reste : </span><span id="nbr"></span> chances</p>
-                </div>
+            <section id="frame">
             </section>
         </div>
     </div>

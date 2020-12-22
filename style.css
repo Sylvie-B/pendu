@@ -16,7 +16,7 @@ body {
 }
 
 #container {
-    width: 70vw;
+    width: 60vw;
     margin: auto;
     padding-top: 2vh;
     background-image: url("paysage.png");
@@ -29,120 +29,21 @@ body {
     font-size: 2vw;
     display: flex;
     flex-direction: row;
-    color: gray;
     text-align: center;
 }
 
 #hollow div {
-    height: 5vh;
+    width: 3vw;
+    margin: 5px;
+    color: lightblue;
+    background-color: lightblue;
+    border-bottom: 1px solid black;
 }
 
 #game {
-    display: flex;
-    padding: 1vh 1vw;
-    align-items: baseline;
-}
-
-section {
-    margin: 0 2vw 0 2vw;
-}
-
-#user {
-    width: 20%;
-    height: 50%;
-    font-size: 1.5vw;
-    background-color: white;
-    border: 1px solid blue;
-}
-
-#hanged {
-    width: 50%;
     position: relative;
 }
 
-/*#ref01 {*/
-/*    display: flex;*/
-/*    justify-content: space-around;*/
-/*}*/
-
-/*#ref02 {*/
-/*    width: 40%;*/
-/*}*/
-
-/*#top, #side, #rope {*/
-/*    background-color: saddlebrown;*/
-/*}*/
-
-/*#head {*/
-/*    background-color: pink;*/
-/*}*/
-
-/*#hanged div {*/
-/*}*/
-
-/*#top {*/
-/*    width: 20vw;*/
-/*    height: 1vh;*/
-/*    margin: auto;*/
-/*}*/
-
-/*#side {*/
-/*    width: 1vh;*/
-/*    height: 40vw;*/
-/*}*/
-
-/*#bottom {*/
-/*    width: 20vw;*/
-/*    height: 1vh;*/
-/*}*/
-
-/*#ref02 {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*}*/
-
-/*#rope {*/
-/*    width: 0.5vh;*/
-/*    height: 10vh;*/
-/*    left : 20vw;*/
-/*}*/
-
-/*#head {*/
-/*    width: 5vw;*/
-/*    height: 5vh;*/
-/*    border-radius: 30px;*/
-/*}*/
-
-/*#leftHand, #corps, #rightHand {*/
-/*    width: 1vw;*/
-/*    height: 10vh;*/
-/*}*/
-
-/*#leftHand {*/
-/*    transform: rotate(50deg);*/
-/*    transform-origin: top;*/
-/*    margin-top: 2vh;*/
-/*}*/
-
-/*#rightHand {*/
-/*    transform: rotate(-50deg);*/
-/*    transform-origin: top;*/
-/*    margin-top: 2vh;*/
-/*    margin-left: 0;*/
-/*}*/
-
-/*#topBody {*/
-/*    display: flex;*/
-/*}*/
-
-/*#bottom {*/
-/*    background-color: saddlebrown;*/
-/*}*/
-
-#info div {
-    border: 1px solid blue;
-    height: 10vh;
-    font-size: 1.5vw;
+#frame {
+    width: 60%;
 }
-
